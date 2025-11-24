@@ -12,19 +12,14 @@ import pandas as pd
 import pickle
 from sklearn.model_selection import KFold, StratifiedKFold
 
-
 def get_distance_mask(L):
-
     m=np.zeros((3,L,L))
-
-
     for i in range(L):
         for j in range(L):
             for k in range(3):
                 if abs(i-j)>0:
                     m[k,i,j]=1/abs(i-j)**(k+1)
     return m
-
 def aug_data(df,aug_df):
     target_df = df.copy()
     new_df = aug_df[aug_df['id'].isin(target_df['id'])]
@@ -80,8 +75,6 @@ def get_best_weights_from_fold(fold,top=5):
         print(weights_path)
         os.system('cp {} best_weights/fold{}top{}.ckpt'.format(weights_path,fold,i+1))
 
-
-
 def mutate_dna_sequence(sequence,nmute=15):
     perm = torch.randperm(sequence.size(1))
     to_mutate = perm[:nmute]
@@ -116,7 +109,6 @@ def get_MLM_mask(sequence,nmask=12):
     mask[:,to_mask]=True
     return mask
 
-
 def update_lr(optimizer, lr):
     for param_group in optimizer.param_groups:
         param_group['lr'] = lr
@@ -131,10 +123,7 @@ def save_weights(model,optimizer,epoch,folder):
         os.makedirs(folder,exist_ok=True)
     torch.save(model.state_dict(), folder+'/epoch{}.ckpt'.format(epoch+1))
 
-
-
 def validate(model,device,dataset,batch_size=64):
-    #outputs=[]
     total_loss = 0
     total_samples = 0
     correct=0
@@ -146,40 +135,20 @@ def validate(model,device,dataset,batch_size=64):
             bpp = data['bpp'].to(device)
             labels = data['labels'].float().to(device) 
             output = model(src, bpp, src_mask=data['src_mask'].to(device)).squeeze()
-            #ew=data['ew'].to(device).float()
-            #directions=data['directions']
-            #directions=directions.reshape(len(directions),1)*np.ones(X.shape)
-            #directions=torch.Tensor(directions).to(device).long()
-            
-                #outputs.append(model(X[:,i],bpps[:,5+i]+distance_mask)[:,:68])
-            # print(outputs.shape)
-            # exit()
             loss = criterion(output, labels) 
-            #output=softmax(output)
-            #classification_predictions = torch.argmax(output,dim=1).squeeze()
-            #val_acc+=Metrics.accuracy(classification_predictions.cpu().numpy(),Y.cpu().numpy())
-            #     predictions.append(pred.cpu().numpy())
-            # for vector in output:
-            #     outputs.append(vector.cpu().numpy())
-            # for label in Y.cpu().numpy():
-            #     ground_truths.append(label)
-            #del output
             total_loss += loss.item() * labels.size(0)
             total_samples += labels.size(0)
             pred_labels = (torch.sigmoid(output) > 0.5).long()
             correct += (pred_labels == labels.long()).sum().item()
-    #ground_truths=np.asarray(ground_truths,dtype='int')
     avg_loss = total_loss / total_samples
     acc = correct / total_samples
     print(f"Validation Loss: {avg_loss:.4f} | Accuracy: {acc:.4f}")
     return avg_loss
 
-
 def revalidate(model,device,dataset,batch_size=64):
     batches=len(dataset)
     total=0
     predictions=[]
-    #outputs=[]
     ground_truths=[]
     loss=0
     val_acc=0
@@ -190,22 +159,12 @@ def revalidate(model,device,dataset,batch_size=64):
             X=data['data'].to(device,).long()[:,:]
             Y=data['labels'].to(device).float()
             bpps=data['bpp'].to(device).float()
-            #directions=data['directions']
-            #directions=directions.reshape(len(directions),1)*np.ones(X.shape)
-            #directions=torch.Tensor(directions).to(device).long()
             output= model(X,bpps)[:,:68,]
             del X
             loss+=criterion(output,Y).mean()
-            #output=softmax(output)
             classification_predictions = torch.argmax(output,dim=1).squeeze()
             val_acc+=Metrics.accuracy(classification_predictions.cpu().numpy(),Y.cpu().numpy())
-            #     predictions.append(pred.cpu().numpy())
-            # for vector in output:
-            #     outputs.append(vector.cpu().numpy())
-            # for label in Y.cpu().numpy():
-            #     ground_truths.append(label)
             del output
-    #ground_truths=np.asarray(ground_truths,dtype='int')
     torch.cuda.empty_cache()
     val_loss=(loss/batches).cpu()
     print(val_loss.item())
