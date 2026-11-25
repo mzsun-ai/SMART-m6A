@@ -1,21 +1,65 @@
-MIT License
+SMART-m6A Non-Commercial Academic Research License
+Version 1.0, 2026-11-25
 
-Copyright (c) 2025 mzsun-ai
+Copyright (c) 2025-2026 mzsun-ai (Mingze Sun).
+All rights reserved except as granted below.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. Scope and permission
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+This license applies to the original SMART-m6A code, documentation, and model
+artifacts owned by the copyright holder and distributed with this license
+(the "Software"). Subject to these terms, the copyright holder grants you a
+non-exclusive, royalty-free license to use, reproduce, modify, and redistribute
+the Software solely for non-commercial academic research, teaching, and
+reproducibility. Academic affiliation alone does not make a use non-commercial.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. No commercial use
+
+This license does not permit commercial use. Commercial use includes use
+primarily intended for commercial advantage or monetary compensation; commercial
+research and development; incorporation into a commercial product or service;
+paid consulting or analysis services; and using the Software to develop, train,
+or validate models intended for commercial deployment. Commercial use and any
+other use outside the permission above require separate prior written permission
+from the copyright holder. No such permission is granted by this license.
+
+3. Notices, modifications, and redistribution
+
+Retain this license and the copyright notice in all copies and modifications.
+Clearly identify modifications and do not imply endorsement by the original
+author. Redistribute the Software and modifications only under these same terms,
+without granting broader rights to the Software than this license permits.
+
+4. Third-party materials and independent results
+
+Third-party code, dependencies, datasets, and separately licensed model weights
+retain their own licenses and are not relicensed by this document. This license
+does not restrict rights independently granted by those third parties. No
+ownership claim is made over independent research findings or publications.
+
+5. Earlier MIT-licensed versions
+
+This license applies beginning with the repository revision that introduces it.
+Earlier revisions, including commit 89669a9e183eba71eee647071b86646277379527,
+were distributed under the MIT License. This change does not retroactively
+revoke or restrict rights validly granted under those earlier MIT releases.
+The new terms do not themselves grant an MIT license to later contributions.
+
+6. Termination
+
+Your permission under this license terminates if you breach these terms. Upon
+termination, stop using and distributing the Software under this license.
+This does not terminate rights independently held under an earlier or
+third-party license. Rights not expressly granted are reserved.
+
+7. Disclaimer
+
+The Software is supplied as is, without warranties of any kind, to the extent
+permitted by applicable law. This includes any implied warranties of
+merchantability, fitness for a particular purpose, and non-infringement. To the
+extent permitted by applicable law, the copyright holder and contributors are
+not liable for any claim, loss, or damage arising from use of the Software.
+
+This is a custom research-use license, not the MIT License or an OSI-approved
+open-source license. For permissions, contact the copyright holder through
+the repository owner account, mzsun-ai, on GitHub.
