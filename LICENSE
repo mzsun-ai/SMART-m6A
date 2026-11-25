@@ -1,5 +1,4 @@
 SMART-m6A Non-Commercial Academic Research License
-Version 1.0, 2026-11-25
 
 Copyright (c) 2025-2026 mzsun-ai (Mingze Sun).
 All rights reserved except as granted below.
@@ -37,22 +36,14 @@ retain their own licenses and are not relicensed by this document. This license
 does not restrict rights independently granted by those third parties. No
 ownership claim is made over independent research findings or publications.
 
-5. Earlier MIT-licensed versions
-
-This license applies beginning with the repository revision that introduces it.
-Earlier revisions, including commit 89669a9e183eba71eee647071b86646277379527,
-were distributed under the MIT License. This change does not retroactively
-revoke or restrict rights validly granted under those earlier MIT releases.
-The new terms do not themselves grant an MIT license to later contributions.
-
-6. Termination
+5. Termination
 
 Your permission under this license terminates if you breach these terms. Upon
 termination, stop using and distributing the Software under this license.
-This does not terminate rights independently held under an earlier or
-third-party license. Rights not expressly granted are reserved.
+This does not terminate rights independently held under a third-party license.
+Rights not expressly granted are reserved.
 
-7. Disclaimer
+6. Disclaimer
 
 The Software is supplied as is, without warranties of any kind, to the extent
 permitted by applicable law. This includes any implied warranties of
@@ -60,6 +51,5 @@ merchantability, fitness for a particular purpose, and non-infringement. To the
 extent permitted by applicable law, the copyright holder and contributors are
 not liable for any claim, loss, or damage arising from use of the Software.
 
-This is a custom research-use license, not the MIT License or an OSI-approved
-open-source license. For permissions, contact the copyright holder through
-the repository owner account, mzsun-ai, on GitHub.
+For permissions, contact the copyright holder through the repository owner
+account, mzsun-ai, on GitHub.
